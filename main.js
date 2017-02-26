@@ -58,7 +58,7 @@ Thumbnail.prototype.ensureThumbnail = function ensureThumbnail(filename, width, 
   if (!~this._supportedExtensions.indexOf(extension.toLowerCase())) { throw new TypeError('image type not supported'); }
 
   var wxh = '';
-  if (height) { wxh = 'x'+height; }
+  if (height) { wxh = 'x'+height; } else { wxh = 'x'; }
   if (width) { wxh = width + wxh; }
 
   var thumbFilename = path.basename(filename, extension)+'-'+wxh+extension;
