@@ -60,8 +60,12 @@ Thumbnail.prototype.ensureThumbnail = function ensureThumbnail(filename, width, 
   var wxh = '';
   if (height) { wxh = 'x'+height; } else { wxh = 'x'; }
   if (width) { wxh = width + wxh; }
+  var filename = wxh;
+  if(wxh.slice(-1) == 'x') {
+    filename = wxh.slice(0, -1);
+  }
 
-  var thumbFilename = path.basename(filename, extension)+'-'+wxh+extension;
+  var thumbFilename = path.basename(filename, extension)+'-'+filename+extension;
 
   var that = this;
 
